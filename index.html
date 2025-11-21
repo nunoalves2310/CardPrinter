@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Printer</title>
+  <!-- Load JsBarcode library -->
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="container">
+  <h2>Card Printer</h2>
+
+  <label>Username:</label>
+  <input type="text" id="username" placeholder="Enter username (max 10 characters)" maxlength="10" />
+
+  <button onclick="generateAll()">Generate Card</button
+
+  <label>Password:</label>
+  <input id="password" type="text" placeholder="Generated password" maxlength="8">
+
+  <button onclick="encodeExisting()" style="background:#555">Encode Existing Password</button>
+
+  <div id="barcodePrintArea">
+    <div id="barcodeBox">
+      <!-- Empty SVG, JsBarcode will draw into this -->
+      <svg id="barcode"></svg>
+    </div>
+  </div>
+
+  <button onclick="downloadBarcode()" style="background:#f97316; margin-top:10px;">Download Card (SVG)</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
