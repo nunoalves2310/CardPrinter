@@ -78,7 +78,7 @@
     const downloadLink = document.createElement("a");
     downloadLink.href = pngUrl;
     const username = document.getElementById("username").value.trim() || "barcode";
-downloadLink.download = `${username}.svg`;
+downloadLink.download = `${username}.png`;
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
@@ -86,3 +86,4 @@ downloadLink.download = `${username}.svg`;
 
   img.src = url;
 }
+
