@@ -10,17 +10,31 @@
   }
 
   // Generate new password + barcode
-  function generateAll() {
-    const username = document.getElementById("username").value.trim();
-    if (!username) {
-      alert("Enter username first");
-      return;
+function generateBarcode() {
+        
+      const username = document.getElementById('username').value.trim();
+      if (!username) {
+        alert('Please enter a username.');
+        return;
+      }
+
+      const password = generateRandomPassword();
+      const paddedUsername = username.padEnd(10, ' ');
+    const combined = `${paddedUsername}${password}`;
+
+
+
+      document.getElementById('passwordDisplay').textContent = `Generated Password: ${password}`;
+
+      JsBarcode("#barcode", combined, {
+        format: "CODE128",
+        lineColor: "#000",
+        width: 2,
+        height: 100,
+        displayValue: true,
+        text: username
+      });
     }
-    const pw = randomPassword();
-    document.getElementById("password").value = pw;
-    const text = `${username}:${pw}`;
-    JsBarcode("#barcode", text, { format: "CODE128", displayValue: true, text: username });
-  }
 
   // Encode existing password into barcode
   function encodeExisting() {
@@ -86,4 +100,5 @@ downloadLink.download = `${username}.png`;
 
   img.src = url;
 }
+
 
