@@ -39,7 +39,7 @@ function generateBarcode() {
   // Encode existing password into barcode
   function encodeExisting() {
     const username = document.getElementById("username").value.trim();
-    const pw = document.getElementById("password").value;
+    const pw = document.getElementById("passwordDisplay").value;
     if (!username || !pw) {
       alert("Username and password required");
       return;
@@ -100,6 +100,7 @@ downloadLink.download = `${username}.png`;
 
   img.src = url;
 }
+
 
 
 
