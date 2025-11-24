@@ -18,7 +18,7 @@ function generateBarcode() {
         return;
       }
 
-      const password = generateRandomPassword();
+      const password = randomPassword();
       const paddedUsername = username.padEnd(10, ' ');
     const combined = `${paddedUsername}${password}`;
 
@@ -100,5 +100,6 @@ downloadLink.download = `${username}.png`;
 
   img.src = url;
 }
+
 
 
