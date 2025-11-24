@@ -1,7 +1,7 @@
 
   // Generate a random password
   function randomPassword(length = 8) {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     let pass = "";
     for (let i = 0; i < length; i++) {
       pass += chars.charAt(Math.floor(Math.random() * chars.length));
@@ -103,6 +103,7 @@ downloadLink.download = `${username}.png`;
 
   img.src = url;
 }
+
 
 
 
