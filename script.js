@@ -44,8 +44,11 @@ function generateBarcode() {
       alert("Username and password required");
       return;
     }
-    const text = `${username}:${pw}`;
-    JsBarcode("#barcode", text, { format: "CODE128", displayValue: true, text: username });
+    const password = pw;
+      const paddedUsername = username.padEnd(10, ' ');
+    const combined = `${paddedUsername}${password}`;
+
+    JsBarcode("#barcode", combined, { format: "CODE128", displayValue: true, text: username });
   }
 
   // Print barcode as image
@@ -100,6 +103,7 @@ downloadLink.download = `${username}.png`;
 
   img.src = url;
 }
+
 
 
 
